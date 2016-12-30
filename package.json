@@ -1,0 +1,28 @@
+{
+  "name": "clientkit-eslint",
+  "version": "0.0.1",
+  "description": "Clientkit task that eslints Javascript files",
+  "main": "eslint.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firstandthird/clientkit-eslint.git"
+  },
+  "author": "First+Third",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/firstandthird/clientkit-eslint/issues"
+  },
+  "homepage": "https://github.com/firstandthird/clientkit-eslint#readme",
+  "devDependencies": {
+    "eslint": "^3.9.1",
+    "eslint-config-firstandthird": "^3.0.2",
+    "eslint-plugin-import": "^2.1.0"
+  },
+  "dependencies": {
+    "clientkit-task": "0.0.7",
+    "eslint": "^3.12.2"
+  },
+  "eslintConfig": {
+    "extends": "firstandthird"
+  }
+}
