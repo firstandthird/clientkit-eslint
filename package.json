@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "clientkit-task": "0.0.7",
-    "eslint": "^3.12.2"
+    "eslint": "^3.13.1"
   },
   "eslintConfig": {
     "extends": "firstandthird"
