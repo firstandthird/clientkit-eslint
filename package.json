@@ -1,6 +1,6 @@
 {
   "name": "runkit-eslint",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "runkit task that eslints Javascript files",
   "main": "eslint.js",
   "repository": {
