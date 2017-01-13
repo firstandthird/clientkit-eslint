@@ -1,25 +1,25 @@
 {
-  "name": "clientkit-eslint",
+  "name": "runkit-eslint",
   "version": "0.0.1",
-  "description": "Clientkit task that eslints Javascript files",
+  "description": "runkit task that eslints Javascript files",
   "main": "eslint.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/firstandthird/clientkit-eslint.git"
+    "url": "git+https://github.com/firstandthird/runkit-eslint.git"
   },
   "author": "First+Third",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/firstandthird/clientkit-eslint/issues"
+    "url": "https://github.com/firstandthird/runkit-eslint/issues"
   },
-  "homepage": "https://github.com/firstandthird/clientkit-eslint#readme",
+  "homepage": "https://github.com/firstandthird/runkit-eslint#readme",
   "devDependencies": {
     "eslint": "^3.9.1",
     "eslint-config-firstandthird": "^3.0.2",
     "eslint-plugin-import": "^2.1.0"
   },
   "dependencies": {
-    "clientkit-task": "0.0.7",
+    "runkit-task": "0.0.10",
     "eslint": "^3.12.2"
   },
   "eslintConfig": {

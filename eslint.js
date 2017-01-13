@@ -1,9 +1,9 @@
 'use strict';
 const formatter = require('eslint').CLIEngine.getFormatter();
 const CLIEngine = require('eslint').CLIEngine;
-const ClientKitTask = require('clientkit-task');
+const RunKitTask = require('runkit-task');
 
-class EslintTask extends ClientKitTask {
+class EslintTask extends RunKitTask {
   get description() {
     return 'Runs the indicated eslint config against the files you listed, and reports the results ';
   }
