@@ -4,6 +4,13 @@ const CLIEngine = require('eslint').CLIEngine;
 const RunKitTask = require('runkit-task');
 
 class EslintTask extends RunKitTask {
+
+  get defaultOptions() {
+    return {
+      ignore: ['.git', 'node_modules']
+    };
+  }
+
   get description() {
     return 'Runs the indicated eslint config against the files you listed, and reports the results ';
   }
