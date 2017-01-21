@@ -1,9 +1,9 @@
 'use strict';
 const formatter = require('eslint').CLIEngine.getFormatter();
 const CLIEngine = require('eslint').CLIEngine;
-const RunKitTask = require('runkit-task');
+const TaskKitTask = require('taskkit-task');
 
-class EslintTask extends RunKitTask {
+class EslintTask extends TaskKitTask {
 
   get defaultOptions() {
     return {

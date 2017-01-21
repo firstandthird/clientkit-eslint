@@ -1,26 +1,26 @@
 {
-  "name": "runkit-eslint",
+  "name": "taskkit-eslint",
   "version": "0.0.2",
-  "description": "runkit task that eslints Javascript files",
+  "description": "taskkit task that eslints Javascript files",
   "main": "eslint.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/firstandthird/runkit-eslint.git"
+    "url": "git+https://github.com/firstandthird/taskkit-eslint.git"
   },
   "author": "First+Third",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/firstandthird/runkit-eslint/issues"
+    "url": "https://github.com/firstandthird/taskkit-eslint/issues"
   },
-  "homepage": "https://github.com/firstandthird/runkit-eslint#readme",
+  "homepage": "https://github.com/firstandthird/taskkit-eslint#readme",
   "devDependencies": {
     "eslint": "^3.9.1",
     "eslint-config-firstandthird": "^3.0.2",
     "eslint-plugin-import": "^2.1.0"
   },
   "dependencies": {
-    "runkit-task": "0.0.10",
-    "eslint": "^3.12.2"
+    "eslint": "^3.12.2",
+    "taskkit-task": "0.0.11"
   },
   "eslintConfig": {
     "extends": "firstandthird"
