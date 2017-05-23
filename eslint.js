@@ -10,7 +10,10 @@ class EslintTask extends TaskKitTask {
       ignore: ['.git', 'node_modules']
     };
   }
-
+  // returns the module to load when running in a separate process:
+  get classModule() {
+    return path.join(__dirname, 'eslint.js');
+  }
   get description() {
     return 'Runs the indicated eslint config against the files you listed, and reports the results ';
   }
