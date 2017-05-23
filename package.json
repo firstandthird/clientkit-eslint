@@ -1,6 +1,6 @@
 {
   "name": "taskkit-eslint",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "taskkit task that eslints Javascript files",
   "main": "eslint.js",
   "repository": {
