@@ -43,6 +43,9 @@ class EslintTask extends TaskKitTask {
       });
       if (errorsExist) {
         this.log(['error'], formatter(results));
+        if (this.options.crashOnError) {
+          return done(new Error('ABORTING DUE TO ESLINT ERRORS (turn off crashOnError if you want to run anyway)'));
+        }
       } else if (warningsExist) {
         this.log(['warning'], formatter(results));
       }
