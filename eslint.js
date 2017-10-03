@@ -2,6 +2,7 @@
 const formatter = require('eslint').CLIEngine.getFormatter();
 const CLIEngine = require('eslint').CLIEngine;
 const TaskKitTask = require('taskkit-task');
+const path = require('path');
 
 class EslintTask extends TaskKitTask {
 
@@ -22,38 +23,25 @@ class EslintTask extends TaskKitTask {
     if (!this.options.files) {
       return done();
     }
-    try {
-      const cli = new CLIEngine({
-        ignorePattern: this.options.ignore
-      });
+    const cli = new CLIEngine({
+      ignorePattern: this.options.ignore
+    });
 
-      this.log(`Linting ${this.options.files} | Ignoring ${this.options.ignore}`);
+    this.log(`Linting ${this.options.files} | Ignoring ${this.options.ignore}`);
 
-      const results = cli.executeOnFiles(this.options.files).results;
-      // if any errors, print them:
-      let errorsExist = false;
-      let warningsExist = false;
-      results.forEach((result) => {
-        if (result.errorCount > 0) {
-          errorsExist = true;
-        }
-        if (result.warningCount > 0) {
-          warningsExist = true;
-        }
-      });
-      if (errorsExist) {
+    const results = cli.executeOnFiles(this.options.files).results;
+    results.forEach((result) => {
+      if (result.errorCount > 0) {
         this.log(['error'], formatter(results));
-        if (this.options.crashOnError) {
-          return done(new Error('ABORTING DUE TO ESLINT ERRORS (turn off crashOnError if you want to run anyway)'));
-        }
-      } else if (warningsExist) {
+      }
+      if (result.warningCount > 0) {
         this.log(['warning'], formatter(results));
       }
-    } catch (e) {
-      this.log(['error'], e);
-    } finally {
-      return done();
+    });
+    if (results.errorCount !== 0 && this.options.crashOnError) {
+      return done(new Error('Aborting due to eslint errors (turn off crashOnError if you want to run anyway)'));
     }
+    done();
   }
 }
 module.exports = EslintTask;
