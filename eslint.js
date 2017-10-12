@@ -38,7 +38,7 @@ class EslintTask extends TaskKitTask {
         this.log(['warning'], formatter(results));
       }
     });
-    if (results.errorCount !== 0 && this.options.crashOnError) {
+    if (results.errorCount > 0 && this.options.crashOnError) {
       return done(new Error('Aborting due to eslint errors (turn off crashOnError if you want to run anyway)'));
     }
     done();
