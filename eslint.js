@@ -30,15 +30,17 @@ class EslintTask extends TaskKitTask {
     this.log(`Linting ${this.options.files} | Ignoring ${this.options.ignore}`);
 
     const results = cli.executeOnFiles(this.options.files).results;
+    let hasError = false;
     results.forEach((result) => {
       if (result.errorCount > 0) {
         this.log(['error'], formatter(results));
+        hasError = true;
       }
       if (result.warningCount > 0) {
         this.log(['warning'], formatter(results));
       }
     });
-    if (results.errorCount > 0 && this.options.crashOnError) {
+    if (hasError && this.options.crashOnError) {
       return done(new Error('Aborting due to eslint errors (turn off crashOnError if you want to run anyway)'));
     }
     done();
