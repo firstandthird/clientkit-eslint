@@ -20,9 +20,9 @@ class EslintTask extends TaskKitTask {
     return 'Runs the indicated eslint config against the files you listed, and reports the results ';
   }
 
-  process(done) {
+  process() {
     if (!this.options.files) {
-      return done();
+      return;
     }
     const cli = new CLIEngine({
       ignorePattern: this.options.ignore
@@ -33,7 +33,7 @@ class EslintTask extends TaskKitTask {
     const results = cli.executeOnFiles(this.options.files).results;
     let hasError = false;
 
-    results.forEach((result) => {
+    results.forEach(result => {
       if (result.errorCount > 0) {
         this.log(['error'], formatter(results));
         hasError = true;
