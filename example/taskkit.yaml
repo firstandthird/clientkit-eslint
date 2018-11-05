@@ -1,0 +1,9 @@
+tasks:
+  eslint: '{{CWD}}/../eslint.js'
+  default:
+    - 'eslint'
+eslint:
+  ignore:
+    - '*-ignored*'
+  files:
+    - 'wrongfiles/**/*.js'

@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "start": "taskkit"
+  },
+  "dependencies": {
+    "taskkit": "^3.2.1",
+    "eslint-config-firstandthird": "^4.3.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true
+    },
+    "extends": "firstandthird"
+  }
+}
